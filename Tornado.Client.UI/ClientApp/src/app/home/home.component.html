@@ -1,0 +1,46 @@
+<div class="card-columns">
+  <div class="card text-white bg-danger mb-3 mt-3">
+    <div class="card-body">
+      <h5 class="card-title">ELECTRONIC SIGNATURE</h5>
+      <i class="fa fa-pencil fa-2x"></i>
+      <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+    </div>
+  </div>
+  <div class="card text-white bg-success mb-3 mt-3">
+    <div class="card-body">
+      <h5 class="card-title">Document Locker</h5>
+      <i class="fa fa-file fa-2x"></i>
+      <p class="card-text"><!--Some quick example text to build on the card title and make up the bulk of the card's content.--></p>
+    </div>
+  </div>
+  <div class="card text-white bg-info mb-3 mt-3">
+    <div class="card-body">
+      <h5 class="card-title">Electronic Organiser</h5>
+      <i class="fa fa-file-text-o fa-2x"></i>
+      <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+    </div>
+  </div>
+  <div class="card text-white bg-dark mb-3 mt-3">
+    <div class="card-body">
+      <h5 class="card-title">SECURE INBOX</h5>
+      <i class="fa fa-envelope fa-2x"></i>
+      <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+    </div>
+  </div>
+</div>
+<div class="col-sm-12">
+  <div class="col-sm-3">
+    <ul>
+      <li *ngFor="let para of paragraphs"><a href="#" (click)="valueChanged(para.id)">{{para.name}}</a></li>
+    </ul>
+  </div>
+  <div class="col-sm-7">
+    <quill-editor (onEditorCreated)="editorCreated($event)"></quill-editor>
+  </div>
+</div>
+
+
+<button (click)="AddText()">Add text</button>
+<select (change)="valueChanged($event.target.value)">
+  <option *ngFor="let para of paragraphs" value="{{para.id}}">{{para.name}}</option>
+</select>
